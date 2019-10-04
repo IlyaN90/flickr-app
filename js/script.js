@@ -183,8 +183,8 @@ async function getGroups(searchString){
         catch(err){
             console.error("hej groups");
         }   
-}
-//fetch images
+    }
+
 async function getImages(searchString){
     const apiKey='2af54aca22ccb9c902078adc64b47907';
     const urlFormat='json&nojsoncallback=1';
