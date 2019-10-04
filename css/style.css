@@ -1,0 +1,277 @@
+body{
+    height: 100%;
+}
+footer{
+    font-family: monospace, sans-serif;
+    font-size: .5rem;
+}
+footer .name{
+    font-size: 1rem;
+}
+
+.upperNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    background-color: rgb(184, 179, 248);
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: .5rem;
+}
+.upperNav form{
+    margin-right: auto;
+    margin-left: auto;
+}
+nav .searchinput{
+    flex:1;
+    width:97%;
+}
+nav .submit{
+    width:99%;
+    font-family: monospace, sans-serif;
+    color:whitesmoke;
+    background:transparent;
+    margin:auto;
+}
+button{
+    font-family: monospace, sans-serif;
+    color:whitesmoke;
+    width:33%;
+    height: 100%;
+    background:rgb(21, 126, 195);
+    border-style: solid;
+    border-color:whitesmoke;
+    border-width: .05rem;
+    border-radius: .2rem;
+    padding: .5rem;
+    font-size: .7rem;
+    margin:auto;
+}
+.upperNav .title{
+    font-family: monospace, sans-serif;
+    text-align: center;
+    color:rgb(58, 1, 105);
+    margin:auto;
+    animation: titlecolor 1s 1;
+}
+
+@keyframes titlecolor {
+    from {color: black;}
+    to {color: green;}
+  }
+
+main section{
+    padding: 1rem;
+    background-color:whitesmoke;
+    border: 1px solid  rgb(184, 179, 248);
+}
+
+main .grid-section {
+    height: 100%;
+    border-radius: .5rem;
+    display: grid;
+    padding:.5rem;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas:
+     "small-img small-img small-img small-img"
+     "small-img small-img small-img small-img"
+     "small-img small-img small-img small-img"
+     "slider slider slider slider";
+     grid-template-rows: 9rem 9rem 9rem 9rem;
+     gap:1rem;
+}
+
+main .zoomIn-section{
+    height: 100wh;
+    border-radius: .5rem;
+    display: grid;
+    padding:.5rem;
+    margin: 0 auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+     "img"
+     "slider";
+     grid-template-rows: minmax(auto) .5rem 4rem;
+     gap:1rem;
+}
+
+main .zoomIn-section figure{
+    height:100%;
+    grid-area: img;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main section figure .large-img {
+    max-width: 35rem;
+    max-height: 50vmax;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: .5rem;
+    padding-top:auto;
+}
+
+main section figure nav{
+    height: 100%;
+}
+
+main .zoomIn-section figure button{
+    display:flex;
+    height: 20rem;
+    width:10rem;
+    background:rgb(184, 179, 248);
+    border-style: solid;
+    border-color:rgb(21, 126, 195);
+    border-width: .05rem;
+    border-radius: .2rem;
+    padding: .5rem;
+    font-size: .7rem;
+    margin: auto;
+    
+}
+
+main section .slider{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+}
+
+
+
+main section .small-img{
+    margin: 0 auto;
+    max-width:10rem;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: .5rem;
+}
+
+main section .slider .small-img{
+    margin: 0 auto;
+    max-width:10rem;
+    border: 1px solid rgb(119, 110, 241);
+    border-radius: .5rem;
+    opacity: 0.5;
+    box-shadow:.2rem .2rem white;
+
+}
+main section .slider .active{
+    margin: 0 auto;
+    max-width:10rem;
+    border: 2px solid rgb(224, 59, 224);
+    border-radius: .5rem;
+    opacity: 1;
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        height: 100%;
+    }
+    main .grid-section{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "small-img small-img small-img"
+        "small-img small-img small-img"
+        "small-img small-img small-img";
+        grid-template-rows: auto auto auto;
+    }
+    main .zoomIn-section{
+        height: 100vw;
+        border-radius: .5rem;
+        display: grid;
+        padding:.5rem;
+        margin: 0 auto;
+        grid-template-columns: auto;
+        grid-template-areas:
+        "img"
+        "button";
+         grid-template-rows: minmax(auto) 2rem 5rem;
+         gap:1rem;
+    }
+
+    main .zoomIn-section figure button{
+    display: none;
+    }
+
+    main .zoomIn-section nav{
+        grid-area:button;
+    }
+    main .zoomIn-section .side-img{
+        display: none;
+    }
+
+    main .large-img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+main section img:hover{
+    border-color:#319ac3;
+}
+
+.large-img:hover {
+    border-color: aquamarine;
+    box-shadow: .2rem .2rem .2rem .2rem rgba(0,0,0,0.24);
+  }
+
+main nav button:hover{
+background-color: aquamarine;
+box-shadow: .2rem .2rem .2rem .2rem rgba(0,0,0,0.24);
+transition: all .5s ease;
+}
+
+nav button:hover{
+    background-color: aquamarine;
+    color:black;
+    border-color:#319ac3;
+}
+
+main section .slider .small-img:hover{
+    opacity: .8;
+    width:12rem;
+    transition: all 1s ease;
+} 
+main section .small-img:hover{
+    width:9rem;
+    transition: all 1s ease;
+    border-color: blue;
+}
+
+main section .slider .active:hover{
+    opacity: 1;
+}
+
+
+
+@media screen and (max-width: 825px){
+    main .grid-section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "small-img small-img"
+        "small-img small-img"
+        "small-img small-img";
+        grid-template-rows: auto auto auto;
+    }
+    main .zoomIn-section{
+        height: 100%;
+    }
+    main section .slider {
+        background-color: whitesmoke; 
+    }
+    main section .slider img{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px){
+    main .grid-section{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "small-img"
+        "small-img"
+        "small-img";
+        grid-template-rows: auto auto auto;
+    }
+}
